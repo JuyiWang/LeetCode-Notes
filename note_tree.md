@@ -1,0 +1,135 @@
+# 树
+
+**重点：树的遍历方法及其特点**
+
+## 二叉树
+
+二叉树的定义：
+```python
+class treeNode():
+    def __init__(self,val):
+        self.val = val
+        self.l_child = None
+        self.r_child = None
+```
+
+## 树的遍历
+
+树的遍历分为前序遍历、中序遍历、后序遍历、层次遍历。前中后三种遍历方法所指为根节点(root)的访问顺序，三种遍历都有递归和迭代两种不同的实现方法。以下树的遍历均以二叉树为例。
+
+### 前序遍历
+
+先访问根节点，再访问左子节点，最后访问右子节点。
+
+递归方法：
+```python
+def preTransversal(tree_node):
+    if not tree_node :
+        return None
+    print(tree_node.val)
+    preTransversal(tree_node.l_child)
+    preTransversal(tree_node.r_child)
+```
+利用栈的后入先出性质实现前序遍历，迭代方法：
+```python
+def preTransversal(tree_node):
+    if not tree_node :
+        return None
+    stack = []
+    while len(stack) or tree_node:
+        while tree_node:
+            print(tree_node.val)
+            stack.insert(0,tree_node)
+            tree_node = tree_node.l_child
+        if len(stack):
+            node = stack.pop(0)
+            tree_node = node.r_child     
+```
+### 中序遍历
+
+先访问左子节点，再访问根节点，最后访问右子节点。
+
+递归方法：
+```python
+def inTransversal(tree_node):
+    if not tree_node :
+        return None
+    inTransversal(tree_node.l_child)
+    print(tree_node.val)
+    inTransversal(tree_node.r_child)
+```
+利用栈的后入先出性质实现中序遍历，与前序遍历相比只是打印父节点的位置发生了变化，迭代方法：
+```python
+def inTransversal(tree_node):
+    if not tree_node :
+        return None
+    stack = []
+    while len(stack) or tree_node:
+        while tree_node:
+            stack.insert(0,tree_node)
+            tree_node = tree_node.l_child
+        if len(stack):
+            node = stack.pop(0)
+            print(node.val)
+            tree_node = node.r_child
+```
+
+### 后序遍历
+
+先访问左子节点，再访问右子节点，最后访问根节点。
+
+递归方法：
+```python
+def posTransversal(tree_node):
+    if not tree_node :
+        return None
+    posTransversal(tree_node.l_child)
+    posTransversal(tree_node.r_child)
+    print(tree_node.val)
+```
+
+后序遍历较为复杂，需要判断当前是否返回至父节点，判断返回的方法为该节点的右子节点已被访问或者为None，迭代方法为：
+```python
+def posTransversal(tree_node):
+    if not tree_node:
+        return None
+    stack = []
+    last_node = None
+    while len(stack) or tree_node:
+        while tree_node:
+            stack.insert(0,tree_node)
+            tree_node = tree_node.l_child
+        if len(stack):
+            tree_node = stack.pop(0)
+            # 判断该节点的子节点是否已访问完毕
+            if tree_node.r_child == None or tree_node.r_child == last_node:
+                print(tree_node.val)
+                last_node = tree_node
+                # tree_node标记为None，防止内while再次将其添加至栈中
+                tree_node = None
+            else:
+                # 若还未访问则继续添加至栈中，访问其右子节点
+                stack.insert(0,tree_node)
+                tree_node = tree_node.r_child
+```
+
+### 层次遍历
+
+深度优先遍历，即为层次遍历，先访问树的第一层节点，再访问树的第二层节点...一直到访问到最下面一层节点。同层节点，以从左到右的顺序依次访问。
+
+利用队列的先入先出实现二叉树的层次遍历。
+
+```python
+def depthFirst(tree_node):
+    if not tree_node :
+        return None
+    stack = [tree_node]
+    while len(stack) > 0:
+        node = stack.pop(0)
+        print(node.val)
+        if node.l_child:
+            stack.append(node.l_child)
+        if node.r_child:
+            stack.append(node.r_child)
+```
+
