@@ -5,7 +5,7 @@
 
 1.[Array](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_array.md)
 
-2.[Tree](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_tree.md)
+2.[Tree](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_binarTree.md)
 
 3.[List]()
 
