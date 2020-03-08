@@ -166,3 +166,61 @@ def depthFirst(tree_node):
 **题解:**
 
     可递归解决
+
+### 538.[把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)
+
+给定一个二叉搜索树（Binary Search Tree），把它转换成为累加树（Greater Tree)，使得每个节点的值是原来的节点值加上所有大于它的节点值之和。
+
+ 
+
+例如：
+
+输入: 原始二叉搜索树:
+
+              5
+            /   \
+           2     13
+
+输出: 转换为累加树:
+
+             18
+            /   \
+          20     13
+
+**题解**
+
+    反向中序遍历
+递归法：
+```python
+class Solution():
+    def __init__(self):
+        self.total = 0
+
+    def convertBST(self, root: TreeNode) -> TreeNode:
+        if root:
+            self.convertBST(root.right)
+            self.total += root.val
+            root.val = self.total
+            self.convertBST(root.left)
+        return root
+```
+迭代法：
+```python
+class Solution():
+    def convertBST(self,root:TreeNode) -> TreeNode:
+            if not root:
+                return None
+            node = root
+            stack = []
+            sum_num = 0
+            while len(stack) or node:
+                while node:
+                    stack.insert(0,node)
+                    node = node.right
+                if len(stack):            
+                    node = stack.pop(0)
+                    sum_num += node.val
+                    node.val = sum_num
+                    node = node.left
+            return root
+```
