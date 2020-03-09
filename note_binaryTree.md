@@ -178,7 +178,7 @@ class Solution:
         return root
 ```
 
-    优化代码：使用字典结构存储存储中序遍历中节点位置，使用python - index会增加程序运行时间。
+    优化代码：使用字典结构存储中序遍历中节点位置。
 ```python
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
