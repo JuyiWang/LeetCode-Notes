@@ -165,7 +165,20 @@ def depthFirst(tree_node):
 
 **题解:**
 
-    可递归解决
+```python
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+        if not len(preorder):
+            return None
+        val = preorder[0]
+        index = inorder.index(val)
+        root = TreeNode(val)
+        root.left = self.buildTree(preorder[1:index+1],inorder[:index])
+        root.right = self.buildTree(preorder[index+1:],inorder[index+1:])
+        return root
+```
+
+    优化代码：使用字典结构存储存储中序遍历中节点位置，使用python - index会增加程序运行时间。
 
 ### 538.[把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)
 
