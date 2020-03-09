@@ -187,7 +187,7 @@ class Solution:
             self.dic[inorder[i]] = i
         return self.recur(0, 0, len(inorder) - 1)
 
-    def recur(self, pre_root, in_left, in_right):
+    def recur(self, pre_root, in_left, in_right): # pre前序索引，in_left、in_right为中序索引
         if in_left > in_right: 
             return None
         root = TreeNode(self.po[pre_root]) 
