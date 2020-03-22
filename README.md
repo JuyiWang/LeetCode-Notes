@@ -7,7 +7,9 @@
 
 2.[树](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_binaryTree.md)
 
-3.[列表]()
+3.[列表](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_list.md)
+
+4.[堆](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_heap.md)
 
 ## 算法
 
