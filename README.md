@@ -5,7 +5,7 @@
 
 1.[数组](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_array.md)
 
-2.[树](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_binaryTree.md)
+2.[二叉树](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_binaryTree.md)
 
 3.[列表](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_list.md)
 
@@ -14,3 +14,5 @@
 ## 算法
 
 1.[动态规划](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_DP.md)
+
+2.[贪心]
