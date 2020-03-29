@@ -15,4 +15,4 @@
 
 1.[动态规划](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_DP.md)
 
-2.[贪心]
+2.[贪心]()
