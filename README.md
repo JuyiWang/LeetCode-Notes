@@ -5,11 +5,13 @@
 
 1.[数组](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_array.md)
 
-2.[二叉树](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_binaryTree.md)
+2.[字符串]()
 
-3.[列表](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_list.md)
+3.[二叉树](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_binaryTree.md)
 
-4.[堆](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_heap.md)
+4.[列表](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_list.md)
+
+5.[堆](https://github.com/JuyiWang/LeetCode-Notes/blob/master/note_heap.md)
 
 ## 算法
 
